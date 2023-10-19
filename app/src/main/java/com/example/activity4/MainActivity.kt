@@ -83,8 +83,8 @@ fun HomeScreen(){
         Box1()
         Spacer(modifier = Modifier.padding(13.dp))
         LocationTemp()
-
-
+        Spacer(modifier = Modifier.padding(13.dp))
+        Box2()
     }
 }
 
@@ -95,7 +95,7 @@ fun Box1(){
         .clip(RoundedCornerShape(25.dp))
         .background(color = Color.Cyan)) {
         Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Image(painter = painterResource(id = R.drawable.weatherapp),
+            Image(painter = painterResource(id = R.drawable.Wheather),
                 contentDescription = null, modifier = Modifier.size(200.dp))
             Text(text = "Hot")
         }
@@ -115,6 +115,66 @@ fun LocationTemp(){
 
     }
 
+}
+@Composable
+fun Box2() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(25.dp))
+            .background(color = Color.Cyan)) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier
+                    .fillMaxWidth()) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .padding(3.dp)) {
+                    Text(
+                        text = "Humidity")
+                    Text(
+                        text = "98%",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp)
+
+                    Spacer(modifier = Modifier.padding(30.dp))
+
+                    Text(
+                        text = "Sunrise")
+                    Text(
+                        text = "05.00 AM",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp)
+                }
+
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .padding(3.dp)) {
+                    Text(
+                        text = "UV Index")
+                    Text(
+                        text = "9 / 10",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp)
+
+                    Spacer(modifier = Modifier.padding(30.dp))
+
+                    Text(
+                        text = "Sunset")
+                    Text(
+                        text = "05.40 PM",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp)
+                }
+            }
+        }
+    }
 }
 
     
